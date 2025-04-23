@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="MY-BLOG">
 <meta property="og:description" content="前言  &emsp;&emsp;要盗取WIFI，我们首先要了解WIFI。&emsp;&emsp;WIFI(Wireless-Fidelity)是一种无线通信网络。其遵循的是IEEE 802.11协议。(有兴趣的可以了解一下 :IEEE 802.11协议基础知识整理)。  说明  &emsp;&emsp;本篇文章只是用来学习使用。不可转载和不可用于违法之事。天网恢恢，疏而不漏。自己犯下的错误，终究">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lqzhi.github.io/%5Cimg%5Cdocs%5C%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF-%E7%9B%97%E5%8F%96WIFI%E5%AF%86%E7%A0%812%5C1.webp">
-<meta property="og:image" content="https://lqzhi.github.io/%5Cimg%5Cdocs%5C%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF-%E7%9B%97%E5%8F%96WIFI%E5%AF%86%E7%A0%812%5C2.webp">
+<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/e2e430859c00a51ce0f2ee447f9d68f0.webp">
+<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/5e06adf65178f98838306d4a92c64257.webp">
 <meta property="article:published_time" content="2020-02-09T11:01:17.000Z">
-<meta property="article:modified_time" content="2025-04-23T09:36:44.581Z">
+<meta property="article:modified_time" content="2025-04-23T10:59:22.592Z">
 <meta property="article:author" content="LQZHI">
 <meta property="article:tag" content="黑客技术">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lqzhi.github.io/%5Cimg%5Cdocs%5C%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF-%E7%9B%97%E5%8F%96WIFI%E5%AF%86%E7%A0%812%5C1.webp">
+<meta name="twitter:image" content="http://1.82.241.142:10064/i/2025/04/23/e2e430859c00a51ce0f2ee447f9d68f0.webp">
   
   
   
@@ -291,7 +291,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年4月23日 下午
+                    本文最后更新于 2025年4月23日 晚上
                   
                 
               </p>
@@ -345,7 +345,7 @@
 <blockquote>
 <p>盗取WIFI密码(五):利用arp欺骗</p>
 </blockquote>
-<p>&emsp;&emsp;ARP是什么？<br>ARP(Address Resolution Protocol):地址解析协议。将IP地址转换成MAC地址，以此来确定网络设备。注意一点：ARP协议是建立在网络中各个主机互相信任的基础上的。(<strong>网络设备之间的互相通信并不是通过IP地址来确定，而是MAC地址。每台主机都又一个ARP缓存表，记录着IP地址所对应的MAC地址。</strong>)<br><img src="/%5Cimg%5Cdocs%5C%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF-%E7%9B%97%E5%8F%96WIFI%E5%AF%86%E7%A0%812%5C1.webp" srcset="/img/loading.gif" lazyload alt="APR通信.png"><br>&emsp;&emsp;什么是ARP欺骗呢？<br>很简单。假设有终端A,终端B和网关C。当数据包要从A发生给B时，A会先发生数据包给网关C，然后网关C再把数据发生给B。这时候，我们可以利用自己的电脑，‘假扮’网关C，获取A的数据后，经过修改，再发送给B。<br><img src="/%5Cimg%5Cdocs%5C%E9%BB%91%E5%AE%A2%E6%8A%80%E6%9C%AF-%E7%9B%97%E5%8F%96WIFI%E5%AF%86%E7%A0%812%5C2.webp" srcset="/img/loading.gif" lazyload alt="ARP双向欺骗.png"><br>APR的单向欺骗也很简单，只要我们发送一个伪造返回包给A(IP地址是网关的IP地址，MAC为我们的MAC地址)。这样，A会把数据返回给我们，而网关还是会把数据包给A。就是指，A只能接受数据，不能发送数据给别人(因为我们拦截了。)<br>（推荐博客 :<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d6f84e2e88c6">中间人攻击——ARP欺骗的原理、实战及防御</a>）</p>
+<p>&emsp;&emsp;ARP是什么？<br>ARP(Address Resolution Protocol):地址解析协议。将IP地址转换成MAC地址，以此来确定网络设备。注意一点：ARP协议是建立在网络中各个主机互相信任的基础上的。(<strong>网络设备之间的互相通信并不是通过IP地址来确定，而是MAC地址。每台主机都又一个ARP缓存表，记录着IP地址所对应的MAC地址。</strong>)<br><img src="http://1.82.241.142:10064/i/2025/04/23/e2e430859c00a51ce0f2ee447f9d68f0.webp" srcset="/img/loading.gif" lazyload alt="APR通信.png"><br>&emsp;&emsp;什么是ARP欺骗呢？<br>很简单。假设有终端A,终端B和网关C。当数据包要从A发生给B时，A会先发生数据包给网关C，然后网关C再把数据发生给B。这时候，我们可以利用自己的电脑，‘假扮’网关C，获取A的数据后，经过修改，再发送给B。<br><img src="http://1.82.241.142:10064/i/2025/04/23/5e06adf65178f98838306d4a92c64257.webp" srcset="/img/loading.gif" lazyload alt="ARP双向欺骗.png"><br>APR的单向欺骗也很简单，只要我们发送一个伪造返回包给A(IP地址是网关的IP地址，MAC为我们的MAC地址)。这样，A会把数据返回给我们，而网关还是会把数据包给A。就是指，A只能接受数据，不能发送数据给别人(因为我们拦截了。)<br>（推荐博客 :<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d6f84e2e88c6">中间人攻击——ARP欺骗的原理、实战及防御</a>）</p>
 <blockquote>
 <p>如何利用ARP欺骗盗取WIFI密码呢？</p>
 </blockquote>
