@@ -26,17 +26,17 @@
 <meta property="og:site_name" content="MY-BLOG">
 <meta property="og:description" content="前言  &emsp;&emsp;在前面线性表的顺序存储结构和线性表的顺序存储结构扩展(动态顺序表)中我们了解到线性表的顺序存储结构。我们能够了解到其顺序表的优缺点。我们知道，顺序表的查找和更新是十分快的。通过下标索引的话，其时间复杂度为常数阶。但是，我们在进行插入，删除的时候，我们发现，我们通常需要移动大量的数据才可以完成。有没有什么存储结构能够快速的插入和删除呢？当然有，那就是链式存储结构。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/c53252a2d29185797f3425bda615d9bf.webp">
-<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/66d68fe6c4591829d08871ea9b831e8d.webp">
-<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/f56aaee13c4e6856141e0aa7fe221a18.webp">
-<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/66a5a6ff1ccd64fe72c0f4437dca42ff.webp">
-<meta property="og:image" content="http://1.82.241.142:10064/i/2025/04/23/dfae2b9988fc5d72e2645ac185eb132c.webp">
+<meta property="og:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/1.webp">
+<meta property="og:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/2.webp">
+<meta property="og:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/3.webp">
+<meta property="og:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/4.webp">
+<meta property="og:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/5.webp">
 <meta property="article:published_time" content="2020-02-06T07:43:41.000Z">
-<meta property="article:modified_time" content="2025-04-23T11:06:39.226Z">
+<meta property="article:modified_time" content="2025-05-14T11:22:01.366Z">
 <meta property="article:author" content="LQZHI">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://1.82.241.142:10064/i/2025/04/23/c53252a2d29185797f3425bda615d9bf.webp">
+<meta name="twitter:image" content="https://lqzhi.github.io/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/1.webp">
   
   
   
@@ -294,7 +294,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年4月23日 晚上
+                    本文最后更新于 2025年5月14日 晚上
                   
                 
               </p>
@@ -313,11 +313,11 @@
 <h6 id="数据域-：存放数据的地方。"><a href="#数据域-：存放数据的地方。" class="headerlink" title="数据域 ：存放数据的地方。"></a>数据域 ：存放数据的地方。</h6><h6 id="关系域-指针域-：存放数据之间关系的地方。"><a href="#关系域-指针域-：存放数据之间关系的地方。" class="headerlink" title="关系域(指针域) ：存放数据之间关系的地方。"></a>关系域(指针域) ：存放数据之间关系的地方。</h6><p>其存储结构抽象类型为</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs abnf">ADT 链式存储结构&#123;<br>    数据域：存放数据<br>    关系域(指针域)：存放数据之间的关系<br>&#125;结点<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
 
-<p>那么数据之间是如何联系的呢？下看图:<br>  <img src="http://1.82.241.142:10064/i/2025/04/23/c53252a2d29185797f3425bda615d9bf.webp" srcset="/img/loading.gif" lazyload alt="举个栗子图"><br>**因为链式结构的对数据的关系是通过</p>
+<p>那么数据之间是如何联系的呢？下看图:<br>  <img src="/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/1.webp" srcset="/img/loading.gif" lazyload alt="举个栗子图"><br>**因为链式结构的对数据的关系是通过</p>
 <blockquote>
 <p>链表</p>
 </blockquote>
-<p>&emsp;&emsp;链表，是其线性表的链式存储结构的简称。链表通常有：单链表、双向链表、循环链表、循环双向链表、静态链表，循环静态链表、循环静态双向链表等等。<br>单链表大致如下图(这个是我学链表的时候理解画的。偷一下懒)<br><img src="http://1.82.241.142:10064/i/2025/04/23/66d68fe6c4591829d08871ea9b831e8d.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-217"><br>掌握了单链表，除了静态链表之外，其它都比较好掌握。</p>
+<p>&emsp;&emsp;链表，是其线性表的链式存储结构的简称。链表通常有：单链表、双向链表、循环链表、循环双向链表、静态链表，循环静态链表、循环静态双向链表等等。<br>单链表大致如下图(这个是我学链表的时候理解画的。偷一下懒)<br><img src="/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/2.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-217"><br>掌握了单链表，除了静态链表之外，其它都比较好掌握。</p>
 <blockquote>
 <p>单链表的方法</p>
 </blockquote>
@@ -327,17 +327,17 @@
 <p>&emsp;&emsp;在构造单链表之前，我们首先要了解到一个概念：<strong>首元结点</strong>和<strong>头结点</strong>。</p>
 <p><strong>首元结点：带有数据的第一个结点。</strong></p>
 <p><strong>头结点：首元结点的直接前驱结点，其没有直接前驱。</strong></p>
-<p><strong>(带头结点的链表和不带头结点的链表)</strong><br><img src="http://1.82.241.142:10064/i/2025/04/23/f56aaee13c4e6856141e0aa7fe221a18.webp" srcset="/img/loading.gif" lazyload alt="首元结点和头结点"><br>(为什么要带一个头结点呢？这不白白增。）</p>
+<p><strong>(带头结点的链表和不带头结点的链表)</strong><br><img src="/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/3.webp" srcset="/img/loading.gif" lazyload alt="首元结点和头结点"><br>(为什么要带一个头结点呢？这不白白增。）</p>
 <figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xl">(带头结点的的链表)<br><span class="hljs-function"><span class="hljs-title">newNode</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span> = header-&gt;</span>next;<span class="hljs-comment">//新添加的结点先保存好原先的数据。指向首元结点</span><br><span class="hljs-function"><span class="hljs-title">header</span>-&gt;</span>next = newNode;<span class="hljs-comment">//再将头结点的指针域指向新添加的结点。</span><br>(不带头结点的链表)<br><span class="hljs-function"><span class="hljs-title">newNode</span>-&gt;</span>next = header;<span class="hljs-comment">//先保存好原先的数据。即添加结点的关系域(指针域)指向首元结点</span><br>header = newNode;<span class="hljs-comment">//修改头指针</span><br></code></pre></td></tr></table></figure>
 
 <p><em><strong>2.尾插法：</strong></em><br><strong>1.先找到尾结点。</strong><br><strong>2.尾结点的指针域指向新添加的结点。</strong></p>
 <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs rust">(没有尾结点的链表)<br>Node <span class="hljs-keyword">move</span> = new Node;<span class="hljs-comment">//创建一个移动的指针。(不能用头指针去寻找尾结点，因为头指针是整个链表的标识。如果我们找不到头结点的时候，我们就找不到链表了。)</span><br><span class="hljs-comment">//带有头结点的链表</span><br><span class="hljs-keyword">while</span>(<span class="hljs-keyword">move</span> <span class="hljs-punctuation">-&gt;</span>next != NULL)&#123;<span class="hljs-comment">//循环找到尾结点</span><br>    <span class="hljs-keyword">move</span> = <span class="hljs-keyword">move</span><span class="hljs-punctuation">-&gt;</span>next;<br>&#125;<br><span class="hljs-comment">//不带头结点的链表</span><br><span class="hljs-keyword">while</span>(<span class="hljs-keyword">move</span> != NULL)&#123;<span class="hljs-comment">//循环找到尾结点</span><br>    <span class="hljs-keyword">move</span> = <span class="hljs-keyword">move</span><span class="hljs-punctuation">-&gt;</span>next;<br>&#125;<br>newNode<span class="hljs-punctuation">-&gt;</span>next = <span class="hljs-keyword">move</span><span class="hljs-punctuation">-&gt;</span>next;<span class="hljs-comment">//先保存好尾部结点的指针域。(单链表尾结点为NULL)</span><br><span class="hljs-keyword">move</span><span class="hljs-punctuation">-&gt;</span>next = newNode;<span class="hljs-comment">//尾部结点指向新添加的数据。</span><br>(有尾结点的链表)<br>newNode<span class="hljs-punctuation">-&gt;</span>next = tail<span class="hljs-punctuation">-&gt;</span>next;<span class="hljs-comment">//先保存好尾部结点的指针域</span><br>tail  = newNode;<span class="hljs-comment">//尾部结点指向新的结点</span><br></code></pre></td></tr></table></figure>
 
-<p>###插入数据<br><img src="http://1.82.241.142:10064/i/2025/04/23/66a5a6ff1ccd64fe72c0f4437dca42ff.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-231"></p>
+<p>###插入数据<br><img src="/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/4.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-231"></p>
 <p><strong>方法：</strong><br><strong>1.找到需要插入结点的前一个结点。</strong><br><strong>2.将插入结点的指针域指向第一步找到结点的指针域。</strong>(保存数据，防止数据丢失)<br><strong>3.将第一步找到的结点的指针域指向插入结点</strong><br>(不需要移动大量的数据，只需要移动指针即可。)</p>
 <figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs xl">(设需要将newNode结点插入到insertNode结点之前)<br>Node move = new Node;<span class="hljs-comment">//创建一个移动的指针。(不能用头指针去寻找尾结点，因为头指针是整个链表的标识。如果我们找不到头结点的时候，我们就找不到链表了。)</span><br><span class="hljs-comment">//带有头结点的链表(没有头结点特别不好插入。各种判断。这里就不进行了。)</span><br><span class="hljs-function"><span class="hljs-title">while</span>(move-&gt;</span>next != NULL)&#123;<span class="hljs-comment">//循环遍历，查找的数据的前一个结点。</span><br>    <span class="hljs-function"><span class="hljs-title">if</span> (move-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">data</span> == insertNode-&gt;</span><span class="hljs-keyword">data</span>)&#123;<span class="hljs-comment">//查找到前一个结点</span><br>         break;         <br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">move</span> = move-&gt;</span>next;<br>&#125;<br><span class="hljs-function"><span class="hljs-title">newNode</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span> = move -&gt;</span><span class="hljs-function"><span class="hljs-title">next</span>;//(move为插入结点的前一个结点.move-&gt;</span>next指向的就是insertNode)<br><span class="hljs-function"><span class="hljs-title">move</span>-&gt;</span>next = newNode;<span class="hljs-comment">//插入新结点</span><br></code></pre></td></tr></table></figure>
 
-<p>###删除数据<br><img src="http://1.82.241.142:10064/i/2025/04/23/dfae2b9988fc5d72e2645ac185eb132c.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-240"></p>
+<p>###删除数据<br><img src="/img/docs/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/5.webp" srcset="/img/loading.gif" lazyload alt="loading-ag-240"></p>
 <p><strong>方法：</strong><br><strong>1.找到需要删除结点的前一个结点。</strong><br><strong>2.保存第一步找到的结点的指针域。</strong><br><strong>3.将第一步找到的结点的指针域等于下一个结点的指针域。</strong><br><strong>3.释放第二步保存的指针域。</strong></p>
 <figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xl">(设需要删除delNode结点)<br>Node move = new Node;<span class="hljs-comment">//创建一个移动的指针。(不能用头指针去寻找尾结点，因为头指针是整个链表的标识。如果我们找不到头结点的时候，我们就找不到链表了。)</span><br><span class="hljs-comment">//带有头结点的链表</span><br><span class="hljs-function"><span class="hljs-title">while</span>(move-&gt;</span>next != NULL)&#123;<br>      <span class="hljs-function"><span class="hljs-title">if</span>(move-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">data</span> == delNode-&gt;</span><span class="hljs-keyword">data</span>)&#123;<span class="hljs-comment">//第一步：判断是否为需要删除的结点(move是需要删除结点的前一个结点的)</span><br>              N<span class="hljs-function"><span class="hljs-title">ode</span> del = move-&gt;</span>next;<span class="hljs-comment">//第二步：保存需要删除的结点</span><br>              <span class="hljs-function"><span class="hljs-title">move</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span> = move-&gt;</span><span class="hljs-function"><span class="hljs-title">next</span>-&gt;</span>next;<span class="hljs-comment">//第三步：删除结点</span><br>              delete del;<span class="hljs-comment">//第四步:释放内存</span><br>              break;<br>      &#125;<br>      <span class="hljs-function"><span class="hljs-title">move</span> = move-&gt;</span>next;<br>&#125;<br></code></pre></td></tr></table></figure>
 
